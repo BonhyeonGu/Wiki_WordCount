@@ -25,15 +25,15 @@ def getPR0den(u):
     return int(tag.text.replace(',', ''))
 
 if __name__ == "__main__":
-    file_locale = './keyOnly0.pkl'
+    file_locale = './keyOnly4.pkl'
     start_point = 0
     
     with open(file_locale, 'rb') as f:
         keyOnly:list = pic.load(f)
-    #with open(file_locale[:-4] + '_ret.pkl', 'rb') as f:
-    #    ret:list = pic.load(f)
-    #    start_point = len(ret) - 1
-    ret = dict()
+    with open(file_locale[:-4] + '_ret.pkl', 'rb') as f:
+        ret:list = pic.load(f)
+        start_point = len(ret) - 1
+    #ret = dict()
 
     for i in range(start_point, len(keyOnly)):
         ret[keyOnly[i]] = getPR0den(keyOnly[i])
